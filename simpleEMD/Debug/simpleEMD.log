@@ -1,0 +1,148 @@
+﻿Build started 2017/6/26 9:13:57.
+     1>Project "D:\WorkSpace\Rep\emd\simpleEMD\simpleEMD.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Procedure\vs2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt diff_Datas.cpp diff_Deltas.cpp emd.cpp opencv_emd.cpp test.cpp util.cpp VS_opencv.cpp
+         VS_opencv.cpp
+         util.cpp
+     1>d:\workspace\rep\emd\simpleemd\emd.h(22): warning C4005: 'INFINITY' : macro redefinition
+                 d:\procedure\vs2013\vc\include\math.h(102) : see previous definition of 'INFINITY'
+     1>d:\workspace\rep\emd\simpleemd\util.cpp(5): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\util.cpp(6): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\util.cpp(12): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\util.cpp(233): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\util.cpp(235): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+         test.cpp
+         opencv_emd.cpp
+     1>d:\workspace\rep\emd\simpleemd\emd.h(22): warning C4005: 'INFINITY' : macro redefinition
+                 d:\procedure\vs2013\vc\include\math.h(102) : see previous definition of 'INFINITY'
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(49): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(50): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(51): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(53): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(54): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(55): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(79): warning C4305: 'initializing' : truncation from 'int' to 'float'
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(83): warning C4305: 'initializing' : truncation from 'int' to 'float'
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(123): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(124): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\opencv_emd.cpp(131): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         emd.cpp
+     1>d:\workspace\rep\emd\simpleemd\emd.h(22): warning C4005: 'INFINITY' : macro redefinition
+                 d:\procedure\vs2013\vc\include\math.h(102) : see previous definition of 'INFINITY'
+     1>d:\workspace\rep\emd\simpleemd\emd.cpp(165): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\workspace\rep\emd\simpleemd\emd.cpp(272): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+         diff_Deltas.cpp
+         diff_Datas.cpp
+     1>d:\workspace\rep\emd\simpleemd\diff_datas.cpp(6): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\procedure\vs2013\vc\include\math.h(102): warning C4005: 'INFINITY' : macro redefinition
+                 d:\workspace\rep\emd\simpleemd\emd.h(22) : see previous definition of 'INFINITY'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2345): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2345): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2345): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2346): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2747): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2747): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2747): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core.hpp(2748): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(88): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(88): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(88): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(88): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2244): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2244): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2244): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2244): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2245): error C2143: syntax error : missing ';' before '{'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2245): error C2447: '{' : missing function header (old-style formal list?)
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2249): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2249): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2249): error C2803: 'operator +' must have at least one formal parameter of class type
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2249): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2249): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2250): error C2143: syntax error : missing ';' before '{'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2250): error C2447: '{' : missing function header (old-style formal list?)
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2254): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2254): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2254): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2254): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2255): error C2143: syntax error : missing ';' before '{'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(2255): error C2447: '{' : missing function header (old-style formal list?)
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3799): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3799): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3799): error C2988: unrecognizable template declaration/definition
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3799): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3799): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3811): error C2065: '_Tp' : undeclared identifier
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3811): error C2923: 'cv::SeqIterator' : '_Tp' is not a valid template type argument for parameter '_Tp'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3812): error C2143: syntax error : missing ';' before '{'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\operations.hpp(3812): error C2447: '{' : missing function header (old-style formal list?)
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(705): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(705): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(705): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(706): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(1428): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(1428): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(1428): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\core\core_c.h(1428): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(296): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(296): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(296): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(297): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(303): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(303): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(303): error C2548: 'cv::getLinearFilter' : missing default parameter for parameter 5
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(303): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(303): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(308): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(308): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(308): error C2548: 'cv::createSeparableLinearFilter' : missing default parameter for parameter 6
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(308): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(311): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(316): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(316): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(316): error C2548: 'cv::createLinearFilter' : missing default parameter for parameter 5
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(316): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(317): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(414): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(414): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(414): error C2548: 'cv::filter2D' : missing default parameter for parameter 6
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(414): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(414): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(420): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(420): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(420): error C2548: 'cv::sepFilter2D' : missing default parameter for parameter 7
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(420): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(420): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(425): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(425): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(425): error C2548: 'cv::Sobel' : missing default parameter for parameter 8
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(425): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(426): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(430): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(430): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(430): error C2548: 'cv::Scharr' : missing default parameter for parameter 7
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(430): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(431): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(435): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(435): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(435): error C2548: 'cv::Laplacian' : missing default parameter for parameter 6
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(435): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\imgproc\imgproc.hpp(436): error C2059: syntax error : ')'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\features2d\features2d.hpp(524): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\features2d\features2d.hpp(524): error C2238: unexpected token(s) preceding ';'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\objdetect\objdetect.hpp(338): warning C4091: '' : ignored on left of 'double' when no variable is declared
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\objdetect\objdetect.hpp(338): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\objdetect\objdetect.hpp(338): warning C4244: '=' : conversion from 'const double' to 'int', possible loss of data
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\objdetect\objdetect.hpp(338): error C2106: '=' : left operand must be l-value
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\ml\ml.hpp(1854): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\ml\ml.hpp(1854): error C2238: unexpected token(s) preceding ';'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\contrib\openfabmap.hpp(273): error C2143: syntax error : missing ')' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\contrib\openfabmap.hpp(273): error C2143: syntax error : missing ';' before 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\contrib\openfabmap.hpp(273): error C2059: syntax error : 'constant'
+     1>d:\workspace\vs_ws\opencv\build\include\opencv2\contrib\openfabmap.hpp(273): fatal error C1003: error count exceeds 100; stopping compilation
+         Generating Code...
+     1>Done Building Project "D:\WorkSpace\Rep\emd\simpleEMD\simpleEMD.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.91

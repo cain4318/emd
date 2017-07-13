@@ -1,0 +1,29 @@
+﻿Build started 2017/7/3 10:16:51.
+     1>Project "D:\WorkSpace\Rep\EMDtester\EMDtester\EMDtester.vcxproj" on node 2 (Rebuild target(s)).
+     1>CustomBuild:
+         Moc'ing emdtester.h...
+         Uic'ing emdtester.ui...
+         Rcc'ing emdtester.qrc...
+     1>RCC : warning : No resources in 'D:\WorkSpace\Rep\EMDtester\EMDtester\emdtester.qrc'.
+         
+       ClCompile:
+         D:\Procedure\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt emdtester.cpp func.cpp GeneratedFiles\Release\moc_emdtester.cpp main.cpp
+         emdtester.cpp
+         func.cpp
+         moc_emdtester.cpp
+         main.cpp
+         Generating Code...
+         D:\Procedure\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_emdtester.cpp
+         qrc_emdtester.cpp
+       Link:
+         D:\Procedure\vs2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\Rep\EMDtester\x64\Release\\EMDtester.exe" /NOLOGO /LIBPATH:D:\Procedure\Qt5.8\5.8\msvc2013_64\lib /LIBPATH:D:\WorkSpace\VS_WS\opencv\win_build\install\x64\vc12\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib opencv_core2413.lib opencv_highgui2413.lib opencv_imgproc2413.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\WorkSpace\Rep\EMDtester\x64\Release\EMDtester.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\Rep\EMDtester\x64\Release\EMDtester.lib" /MACHINE:X64 x64\Release\emdtester.obj
+         x64\Release\func.obj
+         x64\Release\qrc_emdtester.obj
+         x64\Release\moc_emdtester.obj
+         x64\Release\main.obj
+         EMDtester.vcxproj -> D:\WorkSpace\Rep\EMDtester\x64\Release\EMDtester.exe
+     1>Done Building Project "D:\WorkSpace\Rep\EMDtester\EMDtester\EMDtester.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.01

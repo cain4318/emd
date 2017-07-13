@@ -1,0 +1,24 @@
+﻿生成启动时间为 2017/4/14 17:20:17。
+     1>项目“D:\WorkSpace\VS_WS\VS_2013\DataProcess\DataProcess\DataProcess.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (DataProcess.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt funcs.cpp
+         funcs.cpp
+     1>funcs.cpp(97): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 funcs.cpp(93) : 忽略“i”的定义
+                 funcs.cpp(89) : 使用“i”的定义
+     1>funcs.cpp(115): warning C4258: “i”: 忽略 For 循环中的定义；使用封闭范围中的定义
+                 funcs.cpp(111) : 忽略“i”的定义
+                 funcs.cpp(107) : 使用“i”的定义
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\\AlignProcess.exe" /NOLOGO /LIBPATH:D:\Procedure\Qt5.8\5.8\msvc2013_64\lib /LIBPATH:D:\WorkSpace\VS_WS\opencv\win_build\install\x64\vc12\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib opencv_core2413d.lib opencv_highgui2413d.lib opencv_imgproc2413d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\AlignProcess.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\AlignProcess.lib" /MACHINE:X64 x64\Debug\dataprocess.obj
+         x64\Debug\funcs.obj
+         x64\Debug\moc_dataprocess.obj
+         x64\Debug\qrc_dataprocess.obj
+         x64\Debug\main.obj
+         DataProcess.vcxproj -> D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\AlignProcess.exe
+     1>已完成生成项目“D:\WorkSpace\VS_WS\VS_2013\DataProcess\DataProcess\DataProcess.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.01

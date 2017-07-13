@@ -1,0 +1,35 @@
+﻿Build started 2017/6/1 8:50:39.
+     1>Project "D:\WorkSpace\Rep\emd\simpleEMD\simpleEMD.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Procedure\vs2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt opencv_emd.cpp
+         opencv_emd.cpp
+     1>d:\workspace\rep\emd\simpleemd\emd.h(22): warning C4005: 'INFINITY' : macro redefinition
+                 D:\Procedure\vs2013\VC\include\math.h(102) : see previous definition of 'INFINITY'
+     1>opencv_emd.cpp(49): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>opencv_emd.cpp(50): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>opencv_emd.cpp(51): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>opencv_emd.cpp(53): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>opencv_emd.cpp(54): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>opencv_emd.cpp(55): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>opencv_emd.cpp(79): warning C4305: 'initializing' : truncation from 'int' to 'float'
+     1>opencv_emd.cpp(83): warning C4305: 'initializing' : truncation from 'int' to 'float'
+     1>opencv_emd.cpp(119): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>opencv_emd.cpp(120): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>opencv_emd.cpp(127): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+       Link:
+         D:\Procedure\vs2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\Rep\emd\Release\simpleEMD.exe" /INCREMENTAL:NO /NOLOGO opencv_ml2413.lib opencv_calib3d2413.lib opencv_contrib2413.lib opencv_core2413.lib opencv_features2d2413.lib opencv_flann2413.lib opencv_gpu2413.lib opencv_highgui2413.lib opencv_imgproc2413.lib opencv_legacy2413.lib opencv_objdetect2413.lib opencv_ts2413.lib opencv_video2413.lib opencv_nonfree2413.lib opencv_ocl2413.lib opencv_photo2413.lib opencv_stitching2413.lib opencv_superres2413.lib opencv_videostab2413.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\WorkSpace\Rep\emd\Release\simpleEMD.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\Rep\emd\Release\simpleEMD.lib" /MACHINE:X86 /SAFESEH Release\designedTests.obj
+         Release\diff_Datas.obj
+         Release\diff_Deltas.obj
+         Release\emd.obj
+         Release\opencv_emd.obj
+         Release\test.obj
+         Release\util.obj
+         Release\VS_opencv.obj
+         Generating code
+         Finished generating code
+         simpleEMD.vcxproj -> D:\WorkSpace\Rep\emd\Release\simpleEMD.exe
+     1>Done Building Project "D:\WorkSpace\Rep\emd\simpleEMD\simpleEMD.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.50

@@ -1,0 +1,20 @@
+﻿生成启动时间为 2017/5/14 21:13:26。
+     1>项目“D:\WorkSpace\Rep\emd\emd\emd.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         test.cpp
+     1>d:\workspace\rep\emd\emd\emd.h(22): warning C4005: “INFINITY”: 宏重定义
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\math.h(102) : 参见“INFINITY”的前一个定义
+     1>d:\workspace\rep\emd\emd\test.cpp(15): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+     1>d:\workspace\rep\emd\emd\test.cpp(43): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\workspace\rep\emd\emd\test.cpp(44): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\workspace\rep\emd\emd\test.cpp(45): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\Rep\emd\Debug\emd.exe" /INCREMENTAL /NOLOGO opencv_ml2413d.lib opencv_calib3d2413d.lib opencv_contrib2413d.lib opencv_core2413d.lib opencv_features2d2413d.lib opencv_flann2413d.lib opencv_gpu2413d.lib opencv_highgui2413d.lib opencv_imgproc2413d.lib opencv_legacy2413d.lib opencv_objdetect2413d.lib opencv_ts2413d.lib opencv_video2413d.lib opencv_nonfree2413d.lib opencv_ocl2413d.lib opencv_photo2413d.lib opencv_stitching2413d.lib opencv_superres2413d.lib opencv_videostab2413d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\WorkSpace\Rep\emd\Debug\emd.pdb" /SUBSYSTEM:CONSOLE /HEAP:"100000000","100000000" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\Rep\emd\Debug\emd.lib" /MACHINE:X86 Debug\emd.obj
+         Debug\test.obj
+         emd.vcxproj -> D:\WorkSpace\Rep\emd\Debug\emd.exe
+     1>已完成生成项目“D:\WorkSpace\Rep\emd\emd\emd.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.99

@@ -1,0 +1,25 @@
+﻿生成启动时间为 2017/4/20 14:31:26。
+     1>项目“D:\WorkSpace\VS_WS\VS_2013\DataProcess\DataProcess\DataProcess.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (DataProcess.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>CustomBuild:
+         Moc'ing dataprocess.h...
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt dataprocess.cpp GeneratedFiles\Release\moc_dataprocess.cpp main.cpp
+         dataprocess.cpp
+         moc_dataprocess.cpp
+         main.cpp
+         正在生成代码...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Release /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_dataprocess.cpp
+         qrc_dataprocess.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Release\\resultPlus.exe" /NOLOGO /LIBPATH:D:\Procedure\Qt5.8\5.8\msvc2013_64\lib /LIBPATH:D:\WorkSpace\VS_WS\opencv\win_build\install\x64\vc12\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib opencv_core2413.lib opencv_highgui2413.lib opencv_imgproc2413.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Release\resultPlus.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Release\resultPlus.lib" /MACHINE:X64 x64\Release\dataprocess.obj
+         x64\Release\funcs.obj
+         x64\Release\qrc_dataprocess.obj
+         x64\Release\moc_dataprocess.obj
+         x64\Release\main.obj
+         DataProcess.vcxproj -> D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Release\resultPlus.exe
+     1>已完成生成项目“D:\WorkSpace\VS_WS\VS_2013\DataProcess\DataProcess\DataProcess.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.41
