@@ -33,19 +33,21 @@ QString s2q(const string &s);
 
 string q2s(const QString &s);
 
+QImage MatToQImage(const Mat&);
+
 /**判断文件名的前部是否相同**/
 bool sameName(const QString filename1, const QString filename2, int suffix);
 
-void drawHis(vector<float> data,  String title);
+//void drawHis(vector<float> data,  String title);
 
-void drawGradHis(vector<float> data, String title);
+//void drawGradHis(vector<float> data, String title);
 
 void saveTestData(vector<float> data1, vector<float> data2, vector<float> data3, float emd, Mat plan, String filename);
-void saveTestData(vector<float> data1, vector<float> data2, vector<float> data3, vector<float> data4, float emd, float emd_ap, Mat plan, String filename);
+//void saveTestData(vector<float> data1, vector<float> data2, vector<float> data3, vector<float> data4, float emd, float emd_ap, Mat plan, String filename);
 
 void saveImage(vector<float> data1, vector<float> data2, vector<float> data3, String  filename);
-void saveImage(vector<float> data1, vector<float> data2, vector<float> data3, vector<float> data4, String  filename);
-void saveImage(vector<float> data1, vector<float> data2, vector<float> data3, vector<float> data4, vector<float> data5, String  filename);
+//void saveImage(vector<float> data1, vector<float> data2, vector<float> data3, vector<float> data4, String  filename);
+//void saveImage(vector<float> data1, vector<float> data2, vector<float> data3, vector<float> data4, vector<float> data5, String  filename);
 
 float emd_ap(vector<float> SData, vector<float> DData);
 

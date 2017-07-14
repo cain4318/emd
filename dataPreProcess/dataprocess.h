@@ -32,24 +32,12 @@ private slots:
 	void doClicked(const QString & btnname);
 	void setRootPathSlot();
 	void setResPathSlot();
-	void doRenameSlot();
-	void doCutSlot();
-	void doPlusSlot();
-	void doResizeSlot();
-	void doRenameAllSlot();
-
-	void doSclarSlot();
+	
 
 signals:
 	void setRootPathSignal();
 	void setResPathSignal();
-	void doRenameSignal();
-	void doCutSignal();
-	void doPlusSignal();
-	void doResizeSignal();
-	void doRenameAllSignal();
 
-	void doSclarSignal();
 
 public:
 	void addSubFolderImages(QString path);

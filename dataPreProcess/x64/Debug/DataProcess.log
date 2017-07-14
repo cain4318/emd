@@ -1,17 +1,29 @@
-﻿生成启动时间为 2017/4/20 14:40:36。
-     1>项目“D:\WorkSpace\VS_WS\VS_2013\DataProcess\DataProcess\DataProcess.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt dataprocess.cpp
+﻿Build started 2017/7/13 15:58:30.
+     1>Project "D:\WorkSpace\Rep\emd\dataPreProcess\DataProcess.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Moc'ing dataprocess.h...
+         Uic'ing dataprocess.ui...
+         Rcc'ing dataprocess.qrc...
+     1>RCC : warning : No resources in 'D:\WorkSpace\Rep\emd\dataPreProcess\dataprocess.qrc'.
+         
+       ClCompile:
+         D:\Procedure\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt dataprocess.cpp funcs.cpp GeneratedFiles\Debug\moc_dataprocess.cpp main.cpp
          dataprocess.cpp
+         funcs.cpp
+         moc_dataprocess.cpp
+         main.cpp
+         Generating Code...
+         D:\Procedure\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_dataprocess.cpp
+         qrc_dataprocess.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\\DataProcess.exe" /NOLOGO /LIBPATH:D:\Procedure\Qt5.8\5.8\msvc2013_64\lib /LIBPATH:D:\WorkSpace\VS_WS\opencv\win_build\install\x64\vc12\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib opencv_core2413d.lib opencv_highgui2413d.lib opencv_imgproc2413d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\DataProcess.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\DataProcess.lib" /MACHINE:X64 x64\Debug\dataprocess.obj
+         D:\Procedure\vs2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\Rep\emd\dataPreProcess\x64\Debug\\DataProcess.exe" /NOLOGO /LIBPATH:D:\Procedure\Qt5.8\5.8\msvc2013_64\lib /LIBPATH:D:\WorkSpace\VS_WS\opencv\win_build\install\x64\vc12\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib opencv_core2413d.lib opencv_highgui2413d.lib opencv_imgproc2413d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\WorkSpace\Rep\emd\dataPreProcess\x64\Debug\DataProcess.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\Rep\emd\dataPreProcess\x64\Debug\DataProcess.lib" /MACHINE:X64 x64\Debug\dataprocess.obj
          x64\Debug\funcs.obj
          x64\Debug\moc_dataprocess.obj
          x64\Debug\qrc_dataprocess.obj
          x64\Debug\main.obj
-         DataProcess.vcxproj -> D:\WorkSpace\VS_WS\VS_2013\DataProcess\x64\Debug\DataProcess.exe
-     1>已完成生成项目“D:\WorkSpace\VS_WS\VS_2013\DataProcess\DataProcess\DataProcess.vcxproj”(Build 个目标)的操作。
+         DataProcess.vcxproj -> D:\WorkSpace\Rep\emd\dataPreProcess\x64\Debug\DataProcess.exe
+     1>Done Building Project "D:\WorkSpace\Rep\emd\dataPreProcess\DataProcess.vcxproj" (Build target(s)).
 
-生成成功。
+Build succeeded.
 
-已用时间 00:00:01.59
+Time Elapsed 00:00:05.74

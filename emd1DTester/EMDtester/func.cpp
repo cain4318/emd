@@ -9,6 +9,7 @@ string q2s(const QString &s)
 	return string((const char *)s.toLocal8Bit());
 }
 
+
 bool sameName(const QString filename1, const QString filename2, int suffix)
 {
 	String filename1_sub = q2s(filename1).substr(0, filename1.length() - suffix);
