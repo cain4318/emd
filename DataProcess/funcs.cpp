@@ -196,6 +196,7 @@ Mat preL1(Mat image_i)
 
 void emdGrad(Mat image_i, Mat image_j, String filepath)
 {
+	int delta = 1;
 	String filename1 = filepath;
 
 	int size = IMG_ROWS*IMG_COLS;
@@ -230,15 +231,15 @@ void emdGrad(Mat image_i, Mat image_j, String filepath)
 				{
 					if (m == index)
 					{
-						sig_i.at<float>(3 * m) += (N - 1)*1;
+						sig_i.at<float>(3 * m) += (N - 1)*delta;
 					}
 					else
 					{
-						if (sig_i.at<float>(3 * m)>=1)
-							sig_i.at<float>(3 *m) -= 1;
+						if (sig_i.at<float>(3 * m) >= delta)
+							sig_i.at<float>(3 * m) -= delta;
 						else
 						{
-							sig_i.at<float>(3 * index) -= 1;
+							sig_i.at<float>(3 * index) -= delta;
 							pos.push_back(m);
 						}
 					}
@@ -247,7 +248,7 @@ void emdGrad(Mat image_i, Mat image_j, String filepath)
 
 
 			temp_emdGrad_ij = cv::EMD(sig_i, sig_j, CV_DIST_L1, 0, 0);
-
+			temp_emdGrad_ij = (temp_emdGrad_ij - emd_ij) / ((N - 1 - pos.size())*delta);
 			for (int m = 0; m < N; m++)
 			{
 				if (m == index)
@@ -967,12 +968,13 @@ void emdGrad_ap4(Mat image_a, Mat image_b, float delta, String filename)
 	float emdDelta_dis = 0;
 	float min_grad = INT_MAX;
 	float max_grad = INT_MIN;
+	int N = SData.rows*SData.cols;
 	for (int i = 0; i < IMG_ROWS/*image_a.rows*/; i++)
 	{
 		for (int j = 0; j < IMG_COLS/*image_a.cols*/; j++)
 		{
 			emdDelta_dis = emdGradPixal_ap4(SData, DData, i, j, delta);
-			grad_emd.at<float>(i, j) = (emd_dis - emdDelta_dis) / delta;
+			grad_emd.at<float>(i, j) = (emd_dis - emdDelta_dis) / (delta*(N-1));
 			float temp_g = grad_emd.at<float>(i, j);
 			if (grad_emd.at<float>(i, j)>max_grad)
 				max_grad = grad_emd.at<float>(i, j);
@@ -1020,4 +1022,237 @@ float emdGradPixal_ap4(Mat SData, Mat DData, int rowInd, int colInd, float delta
 		}
 	}
 	return emdDelta_ap;
+}
+
+
+//emd近似实现5
+float emdDis_ap5(Mat image_a, Mat image_b)
+{
+	if (image_a.rows != image_a.cols){
+		qDebug() << "the rows and cols are not equal in image";
+		return -1;
+	}
+	if (image_a.rows != image_b.rows){
+		qDebug() << "the dimentions in two image are not equal";
+		return -1;
+	}
+	float emd_dis = 0;
+	int N = (1 + image_a.rows)*image_a.cols / 2;
+	//图像像素总量求和
+	int total_a = 0;
+	int total_b = 0;
+	for (int i = 0; i < image_a.rows; i++)
+	{
+		for (int j = 0; j < image_a.cols; j++)
+		{
+			if (image_a.channels() == 3)
+			{
+				total_a += (int)((int)image_a.at<Vec3b>(i, j)[0])*0.3 + ((int)image_a.at<Vec3b>(i, j)[1])*0.59 + ((int)image_a.at<Vec3b>(i, j)[2])*0.11;
+				total_b += (int)((int)image_b.at<Vec3b>(i, j)[0])*0.3 + ((int)image_b.at<Vec3b>(i, j)[1])*0.59 + ((int)image_b.at<Vec3b>(i, j)[2])*0.11;
+			}
+			else//if (image_a.channels() == 1)
+			{
+				total_a += image_a.at<float>(i, j);
+				total_b += image_b.at<float>(i, j);
+			}
+		}
+	}
+
+	//距离map
+	float dis = 0;
+	Mat resTemp(image_a.rows, image_a.cols, CV_32FC1);
+
+	for (int i = 0; i < image_a.rows; i++){
+		for (int j = 0; j < image_a.cols; j++){
+				dis = sqrt((float)i*i + j*j);
+				resTemp.at<float>(i, j) = dis;
+		}
+	}
+
+	//每列最近距离
+	vector<int> colMins;
+	vector<int> findMins;
+	float ph_i = 0;
+	float sum_a = 0;
+	float sum_b = 0;
+
+	colMins = findMinInCols(resTemp, -1, colMins);
+	for (int i = 0; i < N; i++){
+		findMins = findMinInAll(resTemp, colMins);
+		for (int j = 0; j < findMins.size(); j++)
+		{
+			int index = findMins.at(j);
+			int r = index / image_a.rows;
+			int c = index%image_a.rows;
+
+			//更新disMap 和列最小
+			resTemp.at<float>(r, c) = -1;
+			colMins = findMinInCols(resTemp, c, colMins);
+
+			//ph:
+			if (image_a.channels() == 3){
+				sum_a += (int)((int)image_a.at<Vec3b>(r, c)[0])*0.3 + ((int)image_a.at<Vec3b>(r, c)[1])*0.59 + ((int)image_a.at<Vec3b>(r, c)[2])*0.11;
+				sum_b += (int)((int)image_b.at<Vec3b>(r, c)[0])*0.3 + ((int)image_b.at<Vec3b>(r, c)[1])*0.59 + ((int)image_b.at<Vec3b>(r, c)[2])*0.11;
+			}
+			else
+			{
+				sum_a += image_a.at<float>(r, c);
+				sum_b += image_b.at<float>(r, c);
+			}
+		}
+		ph_i += abs(sum_a / total_a - sum_b / total_b);
+
+	}
+	emd_dis = ph_i;
+
+	return emd_dis;
+}
+
+void emdGrad_ap5(Mat image_a, Mat image_b, float delta, String filename)
+{
+	Mat SData = Mat::zeros(image_a.rows, image_b.cols, CV_32FC1);
+	Mat DData = Mat::zeros(image_a.rows, image_b.cols, CV_32FC1);
+	for (int i = 0; i < IMG_ROWS/*image_a.rows*/; i++)
+	{
+		for (int j = 0; j < IMG_COLS/*image_a.cols*/; j++)
+		{
+			if (image_a.channels() == 3)
+			{
+				SData.at<float>(i, j) = (int)((int)image_a.at<Vec3b>(i, j)[0])*0.3 + ((int)image_a.at<Vec3b>(i, j)[1])*0.59 + ((int)image_a.at<Vec3b>(i, j)[2])*0.11;
+				DData.at<float>(i, j) = (int)((int)image_b.at<Vec3b>(i, j)[0])*0.3 + ((int)image_b.at<Vec3b>(i, j)[1])*0.59 + ((int)image_b.at<Vec3b>(i, j)[2])*0.11;
+			}
+			else
+			{
+				SData.at<float>(i, j) = image_a.at<float>(i, j);
+				DData.at<float>(i, j) = image_b.at<float>(i, j);
+			}
+			float temp_s = SData.at<float>(i, j);
+			float temp_d = DData.at<float>(i, j);
+		}
+	}
+
+	Mat grad_emd = Mat::zeros(image_a.rows, image_b.cols, CV_32FC1);
+	Mat grad_emd_uchar = Mat::zeros(image_a.rows, image_b.cols, CV_8UC1);
+	float emd_dis = emdDis_ap5(image_a, image_b);
+	float emdDelta_dis = 0;
+	float min_grad = INT_MAX;
+	float max_grad = INT_MIN;
+	int N = SData.rows*SData.cols;
+	for (int i = 0; i < IMG_ROWS/*image_a.rows*/; i++)
+	{
+		for (int j = 0; j < IMG_COLS/*image_a.cols*/; j++)
+		{
+			emdDelta_dis = emdGradPixal_ap5(SData, DData, i, j, delta);
+			grad_emd.at<float>(i, j) = (emd_dis - emdDelta_dis) / (delta*(N - 1));
+			float temp_g = grad_emd.at<float>(i, j);
+			if (grad_emd.at<float>(i, j)>max_grad)
+				max_grad = grad_emd.at<float>(i, j);
+			if (grad_emd.at<float>(i, j)<min_grad)
+				min_grad = grad_emd.at<float>(i, j);
+		}
+	}
+	float temp;
+
+	for (int i = 0; i < image_a.rows; i++)
+	{
+		for (int j = 0; j < image_a.cols; j++)
+		{
+			grad_emd.at<float>(i, j) = abs((grad_emd.at<float>(i, j) - min_grad) / (max_grad - min_grad)) * 255;
+			temp = grad_emd.at<float>(i, j);
+			grad_emd_uchar.at<uchar>(i, j) = (int)temp;
+		}
+	}
+	//imwrite("s", SData);
+	//imwrite("D", DData);
+	imwrite(filename, grad_emd_uchar);
+}
+
+float emdGradPixal_ap5(Mat SData, Mat DData, int rowInd, int colInd, float delta)
+{
+	int N = IMG_ROWS*IMG_COLS;
+	for (int i = 0; i < IMG_ROWS/*image_a.rows*/; i++)
+	{
+		for (int j = 0; j < IMG_COLS/*image_a.cols*/; j++)
+		{
+			if (i == rowInd&&j == colInd)
+				SData.at<float>(i, j) += (N - 1)*delta;
+			else
+				SData.at<float>(i, j) -= delta;
+		}
+	}
+	float emdDelta_ap = emdDis_ap5(SData, DData);
+
+	for (int i = 0; i < IMG_ROWS/*image_a.rows*/; i++)
+	{
+		for (int j = 0; j < IMG_COLS/*image_a.cols*/; j++)
+		{
+			if (i == rowInd&&j == colInd)
+				SData.at<float>(i, j) -= (N - 1)*delta;
+			else
+				SData.at<float>(i, j) += delta;
+		}
+	}
+	return emdDelta_ap;
+}
+
+vector<int> findMinInAll(Mat Data, vector<int> colMins){
+
+	float min_dis = INT_MAX;
+	float temp_dis = 0;
+	int pos = 0;
+	vector<int> res;
+	for (int i = 0; i < colMins.size(); i++){
+		pos = colMins.at(i);
+		if (pos == -1)
+			continue;
+		temp_dis = Data.at<float>(pos / Data.rows, pos % Data.rows);
+		if (temp_dis < min_dis && temp_dis != -1)
+		{
+			min_dis = temp_dis;
+			res.clear();
+			res.push_back(pos);
+		}
+		else
+		{
+			if (temp_dis == min_dis)
+				res.push_back(pos);
+		}
+	}
+	return res;
+}
+
+vector<int> findMinInCols(Mat Data, int colIndex, vector<int> colMins)
+{
+	float minDis = INT_MAX;
+	int pos = 0;
+	if (colIndex == -1)//更新所有列的最小值
+	{
+		colMins.clear();
+		for (int i = 0; i < Data.cols; i++){
+			for (int j = 0; j < Data.rows; j++){
+				if (Data.at<float>(i, j) < minDis && Data.at<float>(i, j) != -1){
+					minDis = Data.at<float>(i, j);
+					pos = j*Data.rows + i;
+				}
+			}
+			colMins.push_back(pos);
+			minDis = INT_MAX;
+		}
+		return colMins;
+	}
+	else{ //更新某一列的最小值
+		bool change = false;
+		for (int i = 0; i < Data.rows; i++){
+			if (Data.at<float>(i, colIndex) < minDis && Data.at<float>(i, colIndex) != -1){
+				minDis = Data.at<float>(i, colIndex);
+				pos = i*Data.rows + colIndex;
+				change = true;
+			}
+		}
+		if (change)
+			colMins.at(colIndex) = pos;
+		else
+			colMins.at(colIndex) = -1;
+	}
+	return colMins;
 }

@@ -128,8 +128,8 @@ void DataProcess::calGradSlot()
 			Mat image_j = imread(q2s(imagePath_list.at(2 * j+1)), 1);
 			save_path_save.append(to_string(j)).append(".jpg");
 			//qDebug() << "compare between 0 and" << j;
-			emdGrad(image_i, image_j, save_path_save);
-			//emdGrad_ap4(image_i, image_j, 1, save_path_save);
+			//emdGrad(image_i, image_j, save_path_save);
+			emdGrad_ap5(image_i, image_j, 1, save_path_save);
 			save_path_save = save_path;
 //filename = "grad";
 			//emdGradPara(image_i, image_j, save_path);

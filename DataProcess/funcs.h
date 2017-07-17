@@ -83,3 +83,11 @@ float emdDis_ap4(Mat image_a, Mat image_b);
 float ph4(Mat image_a, Mat image_b, int index, int total_a, int total_b, int flag);
 void emdGrad_ap4(Mat image_a, Mat image_b, float delta, String filename);
 float emdGradPixal_ap4(Mat SData, Mat DData, int rowInd, int colInd, float delta);
+
+//emd ½üËÆÊµÏÖ2
+float emdDis_ap5(Mat image_a, Mat image_b);
+//float ph5(Mat image_a, Mat image_b, Mat* disMap, int index, int total_a, int total_b, float last_ph);
+void emdGrad_ap5(Mat image_a, Mat image_b, float delta, String filename);
+float emdGradPixal_ap5(Mat image_a, Mat image_b, int rowInd, int colInd, float delta);
+vector<int> findMinInAll(Mat Data, vector<int> colMins);
+vector<int> findMinInCols(Mat Data, int colIndex, vector<int> colMins);

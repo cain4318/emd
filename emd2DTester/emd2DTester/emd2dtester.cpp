@@ -201,8 +201,101 @@ void emd2DTester::calPairSlot(){
 	image_l = imread(q2s(imagePath_list.at(2 * pairIndex)), 1);
 	image_r = imread(q2s(imagePath_list.at(2 * pairIndex + 1)), 1);
 
+	Mat image_l_norm=Mat(image_l.rows,image_l.cols,CV_32FC1);
+	Mat image_r_norm = Mat(image_r.rows, image_r.cols, CV_32FC1);
+
+	float temp_rowSum_r = 0;
+	float min_rowSum_r = INT_MAX;
+	float temp_data_r = 0;
+	vector<float> rowSums_r;
+
+	float temp_rowSum_l = 0;
+	float min_rowSum_l = INT_MAX;
+	float temp_data_l = 0;
+	vector<float> rowSums_l;
+
+	//列进行能量归一化
+	for (int i = 0; i < image_l.rows; i++)
+	{
+		temp_rowSum_r = 0;
+		temp_rowSum_l = 0;
+		for (int j = 0; j < image_l.cols; j++)
+		{
+			if (image_l.channels() == 3){
+				temp_data_r = (int)((int)image_r.at<Vec3b>(i, j)[0])*0.3 + ((int)image_r.at<Vec3b>(i, j)[1])*0.59 + ((int)image_r.at<Vec3b>(i, j)[2])*0.11;
+				temp_data_l = (int)((int)image_l.at<Vec3b>(i, j)[0])*0.3 + ((int)image_l.at<Vec3b>(i, j)[1])*0.59 + ((int)image_l.at<Vec3b>(i, j)[2])*0.11;
+			}
+			if (image_l.channels() == 1){
+				temp_data_r = image_r.at<float>(i, j);
+				temp_data_l = image_l.at<float>(i, j);
+			}
+			temp_rowSum_r += temp_data_r;
+			temp_rowSum_l += temp_data_l;
+		}
+		if (min_rowSum_r > temp_rowSum_r)
+			min_rowSum_r = temp_rowSum_r;
+		rowSums_r.push_back(temp_rowSum_r);
+
+		if (min_rowSum_l > temp_rowSum_l)
+			min_rowSum_l = temp_rowSum_l;
+		rowSums_l.push_back(temp_rowSum_l);
+
+	}
+
+	float scale = 0;
+	for (int i = 0; i < image_l.rows; i++)
+	{
+		scale = rowSums_r.at(i) / min_rowSum_r;
+		rowSums_r.at(i) = scale;
+		
+		scale = rowSums_l.at(i) / min_rowSum_l;
+		rowSums_l.at(i) = scale;
+		qDebug() << "scale_l" << i << ":	" << scale;
+	}
+
+	float scale_r = 0;
+	float scale_l = 0;
+	for (int i = 0; i < image_l.rows; i++)
+	{
+		scale_r = rowSums_r.at(i);
+		scale_l = rowSums_l.at(i);
+		for (int j = 0; j < image_l.cols; j++)
+		{
+			if (image_l.channels() == 3){
+				temp_data_r = (int)((int)image_r.at<Vec3b>(i, j)[0])*0.3 + ((int)image_r.at<Vec3b>(i, j)[1])*0.59 + ((int)image_r.at<Vec3b>(i, j)[2])*0.11;
+				temp_data_l = (int)((int)image_l.at<Vec3b>(i, j)[0])*0.3 + ((int)image_l.at<Vec3b>(i, j)[1])*0.59 + ((int)image_l.at<Vec3b>(i, j)[2])*0.11;
+			}
+			if (image_l.channels() == 1){
+				temp_data_r = image_r.at<float>(i, j);
+				temp_data_l = image_l.at<float>(i, j);
+			}
+			image_l_norm.at<float>(i, j) = temp_data_l/scale_l;
+			image_r_norm.at<float>(i, j) = temp_data_r/scale_r;
+		}
+	}
+
+	float temp_rowSum_ln = 0;
+	float temp_data_ln = 0;
+	//验证归一化后结果
+	for (int i = 0; i < image_l_norm.rows; i++)
+	{
+		temp_rowSum_ln = 0;
+		temp_rowSum_l = 0;
+		for (int j = 0; j < image_l_norm.cols; j++)
+		{
+
+			temp_data_l = (int)((int)image_l.at<Vec3b>(i, j)[0])*0.3 + ((int)image_l.at<Vec3b>(i, j)[1])*0.59 + ((int)image_l.at<Vec3b>(i, j)[2])*0.11;
+			temp_data_ln = image_l_norm.at<float>(i, j);
+
+			temp_rowSum_ln += temp_data_ln;
+			temp_rowSum_l += temp_data_l;
+		}
+		qDebug() << "temp_rowSum_l:" << temp_rowSum_l << "		temp_rowSum_ln" << temp_rowSum_ln;
+
+	}
+
 	//计算行emd
-	lineEmds = calLineEmds(image_r, image_l);
+	lineEmds = calLineEmds(image_r_norm, image_l_norm);// , rowSums_r, rowSums_l);
 	//for (int i = 0; i < image_r.rows; i++)
 	//{
 	//	//初始source数据
@@ -283,6 +376,7 @@ vector<float> emd2DTester::initData(Mat data, int lineInd)
 		if (data.channels() == 1)
 			temp_data = data.at<float>(lineInd, d);
 
+		//temp_data = temp_data*scale;
 			sig.push_back(temp_data);
 			/*sig.at<float>(d * 2) = temp_data;
 	sig.at<float>(d * 2 + 1) = d;*/
@@ -290,12 +384,15 @@ vector<float> emd2DTester::initData(Mat data, int lineInd)
 	return sig;
 }
 
-vector<float> emd2DTester::calLineEmds(Mat image_r, Mat image_l){
+vector<float> emd2DTester::calLineEmds(Mat image_r, Mat image_l){//, vector<float> rowSums_r, vector<float> rowSums_l){
 	vector<float> lineEmds;
+	//float scale_r = 0;
+	//float scale_l = 0;
 	for (int i = 0; i < image_r.rows; i++)
 	{
 		//初始source数据
-		vector<float> SData = initData(image_r, i);
+		//scale_r = rowSums_r.at(i);
+		vector<float> SData = initData(image_r, i);//,scale_r);
 		vector<float> TData;
 		float remp_lineemd = 0;
 		for (int j = -radius; j <= radius; j++)
@@ -305,7 +402,8 @@ vector<float> emd2DTester::calLineEmds(Mat image_r, Mat image_l){
 				neigInd = 0;
 			if (neigInd >= image_r.rows)
 				neigInd = image_r.rows - 1;
-			TData = initData(image_l, neigInd);
+			//scale_l = rowSums_l.at(i);
+			TData = initData(image_l, neigInd);//, scale_l);
 			float emdDis_ap = emd_ap(TData, SData);
 			remp_lineemd = emdDis_ap*weights.at(j + radius);
 		}

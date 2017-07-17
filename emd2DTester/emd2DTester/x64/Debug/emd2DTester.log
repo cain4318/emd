@@ -1,8 +1,11 @@
-﻿Build started 2017/7/14 15:06:24.
+﻿Build started 2017/7/17 9:24:04.
      1>Project "D:\WorkSpace\Rep\emd\emd2DTester\emd2DTester\emd2DTester.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Procedure\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt funcs.cpp
-         funcs.cpp
+         D:\Procedure\vs2013\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include /I.\GeneratedFiles\Debug /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtCore /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtGui /ID:\Procedure\Qt5.8\5.8\msvc2013_64\include\QtWidgets /ID:\WorkSpace\VS_WS\opencv\win_build\install\include /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt emd2dtester.cpp
+         emd2dtester.cpp
+     1>emd2dtester.cpp(468): warning C4258: 'j' : definition from the for loop is ignored; the definition from the enclosing scope is used
+                 emd2dtester.cpp(451) : definition of 'j' ignored
+                 emd2dtester.cpp(430) : definition of 'j' used
        Link:
          D:\Procedure\vs2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\WorkSpace\Rep\emd\emd2DTester\x64\Debug\\emd2DTester.exe" /NOLOGO /LIBPATH:D:\Procedure\Qt5.8\5.8\msvc2013_64\lib /LIBPATH:D:\WorkSpace\VS_WS\opencv\win_build\install\x64\vc12\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib opencv_core2413d.lib opencv_highgui2413d.lib opencv_imgproc2413d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\WorkSpace\Rep\emd\emd2DTester\x64\Debug\emd2DTester.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\WorkSpace\Rep\emd\emd2DTester\x64\Debug\emd2DTester.lib" /MACHINE:X64 x64\Debug\comparedialog.obj
          x64\Debug\emd2dtester.obj
@@ -16,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.67
+Time Elapsed 00:00:01.72
